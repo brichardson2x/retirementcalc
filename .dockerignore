@@ -1,0 +1,7 @@
+__pycache__
+README.MD
+LICENSE
+*.pyc
+*.pyo
+.git
+.env
