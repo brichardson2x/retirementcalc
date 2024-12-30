@@ -1,0 +1,106 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+}
+.form div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+}
+.container {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+}
+h1 {
+    color: #007BFF;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+h2 {
+    color: #0056b3;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+.button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #0056b3;
+}
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #444;
+    color: #fff;
+}
+input::placeholder, textarea::placeholder {
+    color: #bbb;
+}
+.volatility-group, .account-type-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.volatility-options, .account-type-options {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.volatility-options label, .account-type-options label {
+    margin-right: 10px;
+}
+.volatility-input, .account-type-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+    button {
+        width: 100%;
+    }
+    form {
+        width: 90%;
+    }
+}

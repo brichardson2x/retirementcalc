@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+
+    <div>
+        <h1>Retirement Nest Egg Calculator</h1>
+        <form class="form">
+            <div>
+                <h2>Basic Assumptions</h2>
+                <input type="number" name="current_age" placeholder="Current Age">
+                <input type="number" name="retirement_age" placeholder="Retirement Age">
+                <input type="text" name="years_in_retirement" placeholder="Years in Retirement">
+                <input type="text" name="average_annual_return" placeholder="Average Annual Return">
+                <input type="text" name="average_inflation_rate" placeholder="Average Inflation Rate">
+                <div class="volatility-group">
+                    <label>Volatility Level</label>
+                    <div class="volatility-options">
+                        <div class="volatility-input">
+                            <input type="radio" name="volatility" value="low" id="volatility-low">
+                            <label for="volatility-low">Low</label>
+                        </div>
+                        <div class="volatility-input">
+                            <input type="radio" name="volatility" value="medium" id="volatility-medium">
+                            <label for="volatility-medium">Medium</label>
+                        </div>
+                        <div class="volatility-input">
+                            <input type="radio" name="volatility" value="high" id="volatility-high">
+                            <label for="volatility-high">High</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h2>401k</h2>
+                <input type="text" name="401k_balance" placeholder="401k Balance">
+                <input type="text" name="monthly_contribution" placeholder="Monthly Contribution">
+                <div class="account-type-group">
+                    <label>Account Type</label>
+                    <div class="account-type-options">
+                        <div class="account-type-input">
+                            <input type="radio" name="401k_type" value="roth" id="401k-roth">
+                            <label for="401k-roth">Roth</label>
+                        </div>
+                        <div class="account-type-input">
+                            <input type="radio" name="401k_type" value="traditional" id="401k-traditional">
+                            <label for="401k-traditional">Traditional</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <h2>HSA</h2>
+                <input type="text" name="hsa_balance" placeholder="HSA Balance">
+                <input type="text" name="monthly_contribution_hsa" placeholder="Monthly Contribution">
+                <br>
+                <h2>IRA</h2>
+                <input type="text" name="ira_balance" placeholder="IRA Balance">
+                <input type="text" name="monthly_contribution_ira" placeholder="Monthly Contribution">
+                <div class="account-type-group">
+                    <label>Account Type</label>
+                    <div class="account-type-options">
+                        <div class="account-type-input">
+                            <input type="radio" name="ira_type" value="roth" id="ira-roth">
+                            <label for="ira-roth">Roth</label>
+                        </div>
+                        <div class="account-type-input">
+                            <input type="radio" name="ira_type" value="traditional" id="ira-traditional">
+                            <label for="ira-traditional">Traditional</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="../static/home.js"></script>
+</body>
+</html>
+
