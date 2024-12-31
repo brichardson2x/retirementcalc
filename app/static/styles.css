@@ -2,7 +2,6 @@ html {
     font-size: 18px;
 }
 .container {
-    display: flex;
     align-items: center;
 }
 .form {
