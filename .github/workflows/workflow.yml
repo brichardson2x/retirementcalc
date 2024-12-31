@@ -6,14 +6,48 @@ on:
       - testnope
 
 jobs:
-  build:
+  dockerbuild:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Set up SSH Key
+        run: |
+          mkdir -p ~/.ssh/
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/github_actions
+          chmod 600 ~/.ssh/github_actions
+          ssh-keyscan -p 45853 brandonrichardson.dev >> ~/.ssh/known_hosts
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          node-version: '14'
-      - run: npm install
-      - run: npm test
+          python-version: '3.9'
+
+      - name: Verify Python
+        run: |
+          python --version
+          pip --version
+
+      - name: Install dependencies  
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run dockerfile
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}\retirementcalc:latest .
+
+      - name: Login Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          
+      - name: Push to Docker Hub
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}\retirementcalc:latest
+
+      - name: Deploy to Server
+        run: |
+          ssh -i ~/.ssh/github_actions brandon@dev.brandonrichardson docker pull ${{ secrets.DOCKER_USERNAME }}\retirementcalc:latest && docker run -d --name retirementcalc -p 8080:80 ${{ secrets.DOCKER_USERNAME }}\retirementcalc:latest
