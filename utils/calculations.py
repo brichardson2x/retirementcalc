@@ -58,13 +58,19 @@ def sum_benefits_calc(four01k_principal, ira_principal, hsa_principal, four01k_c
     sum_values = [hsa + ira + four01k + dividends for hsa, ira, four01k, dividends in zip(hsa_values, ira_values, four01k_values, dividends_values)]
     return sum, sum_values
 
-def spend_benefits(principal, rate, ssi_years, til_retire, inflation, til_death, variance, dividend_yield, ssi):
+def spend_benefits(principal, rate, ssi_years, til_retire, inflation, til_death, variance, dividend_yield, ssi, spend_rate):
+    rate = rate - (variance**2)/2
     dividends_values = []
     ssi_values = []
-    dividends_values = liveoff_dividend(principal, rate, dividend_yield, years, variance)
+    values = []
+    dividends_values = liveoff_dividend(principal, rate, dividend_yield, til_death, variance)
     ssi_values = include_ssi(ssi_years, til_retire, inflation)
+    for i in range(til_death):
+        principal = principal*(1+rate) + ssi_values[i] + dividends_values[4 * i]- principal * spend_rate
+        values.append(principal)
+        if principal < 0:
+            values.append(0)
+            break
 
-
-    sum = dividends_amount + ssi
-    return sum
+    return values
 
