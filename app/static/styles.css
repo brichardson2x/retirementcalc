@@ -3,7 +3,6 @@ html {
 }
 .container {
     display: flex;
-    align-items: center;
     align-self: center;
 }
 .form {
