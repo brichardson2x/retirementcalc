@@ -1,20 +1,22 @@
+html {
+    font-size: 18px;
+}
+.container {
+    align-items: center;
+}
 .form {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 10px;
     max-width: 800px;
     padding: 20px;
-    background-color: #333;
+    background-color: #004080;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     margin: 20px;
 }
-.form div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-body {
+
+.body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -23,25 +25,19 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    background-color: white;
     color: #fff;
 }
-.container {
-    text-align: center;
-    max-width: 800px;
-    padding: 20px;
-    background-color: #333;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 20px;
-}
+
 h1 {
-    color: #007BFF;
+    color: black;
+    text-align: center;
     margin-bottom: 20px;
     font-size: 2.5em;
 }
+
 h2 {
-    color: #0056b3;
+    color: #FFD700;
     margin-bottom: 15px;
     font-size: 2em;
 }
@@ -52,12 +48,18 @@ p {
 }
 .button {
     background-color: #007BFF;
+    font-family: Arial, sans-serif;
     color: white;
+    width: 100%;
+    text-align: center;
+    align-self: center;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    text-transform: uppercase;
+    border-radius: 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 30px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 .button:hover {
@@ -68,39 +70,95 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
-    background-color: #444;
-    color: #fff;
+    background-color: #D9F0FF;
+    color: black;
 }
 input::placeholder, textarea::placeholder {
     color: #bbb;
 }
+
+.volatility {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/*
 .volatility-group, .account-type-group {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 }
 .volatility-options, .account-type-options {
     display: flex;
+    flex-direction: row;
     gap: 10px;
-    align-items: center;
-    flex-wrap: wrap;
 }
 .volatility-options label, .account-type-options label {
     margin-right: 10px;
 }
 .volatility-input, .account-type-input {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     gap: 5px;
 }
+    */
 @media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    .form {
+        gap: 7px;
+        max-width: 700px;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 15px;
+    }
+    .volatility {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 480px) {
     h1 {
         font-size: 24px;
     }
     button {
         width: 100%;
     }
-    form {
-        width: 90%;
+    .form {
+        gap: 4px;
+        width: 80%;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px;
+    }
+    .volatility {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+    button {
+        width: 100%;
+    }
+    .form {
+        width: 70%;
+        gap: 4px;
+        padding: 5px;
+        border-radius: 5px;
+        margin: 8px;
+    }
+    .volatility {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
     }
 }
