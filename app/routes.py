@@ -7,4 +7,4 @@ def home():
 
 @app.route('/calculator', methods=['POST'])
 def calculator():
-    return
+    return render_template('test.html')
