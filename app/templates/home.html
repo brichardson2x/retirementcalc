@@ -9,14 +9,14 @@
 <body class="body">
     <h1>Retirement Nest Egg Calculator</h1>
     <div class="container">
-        <form class="form">
+        <form class="form" id="retirement">
             <div class="form">
                 <h2>Basic Assumptions</h2>
                 <input type="number" name="current_age" placeholder="Current Age" required>
-                <input type="number" name="retirement_age" placeholder="Retirement Age">
-                <input type="text" name="years_in_retirement" placeholder="Years in Retirement">
-                <input type="text" name="average_annual_return" placeholder="Average Annual Return">
-                <input type="text" name="average_inflation_rate" placeholder="Average Inflation Rate">
+                <input type="number" name="retirement_age" placeholder="Retirement Age" required>
+                <input type="text" name="years_til_death" placeholder="Years in Retirement" required>
+                <input type="text" name="average_annual_return" placeholder="Average Annual Return" value="8" required>
+                <input type="text" name="average_inflation_rate" placeholder="Average Inflation Rate" value="2.5" required>
                 <div class="volatility">
                     <label>Volatility Level</label>
                     <div class="volatility">
@@ -26,7 +26,7 @@
                             <label for="volatility-medium">Medium</label>
                             <input type="radio" name="volatility" value=".3" id="volatility-high">
                             <label for="volatility-high">High</label>
-                            <input type="radio" name="volatility" value=".5" id="volatility-high">
+                            <input type="radio" name="volatility" value=".5" id="volatility-extremely-high">
                             <label for="volatility-high">Extremely High</label>
                     </div>
                 </div>
@@ -34,8 +34,8 @@
                 <h2>401k</h2>
                 <input type="text" name="401k_balance" placeholder="401k Balance">
                 <input type="text" name="monthly_contribution" placeholder="Monthly Contribution">
-                <input type="text" name="company_match_percentage" placeholder="Company Match Percentage">
-                <input type="text" name="max_contribution_match" placeholder="Maximum Contribution Match">
+                <input type="text" name="company_match_percentage" placeholder="Company Match Percentage" value="0">
+                <input type="text" name="max_contribution_match" placeholder="Maximum Contribution Match" value="0">
                 <br>
                 <h2>HSA</h2>
                 <input type="text" name="hsa_balance" placeholder="HSA Balance">
