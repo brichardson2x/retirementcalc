@@ -7,4 +7,4 @@ def home():
 
 @app.route('/calculator', methods=['POST'])
 def calculator():
-    data = return.json()
+    return
