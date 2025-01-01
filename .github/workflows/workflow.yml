@@ -50,4 +50,4 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh -i ~/.ssh/github_actions brandon@dev.brandonrichardson docker pull ${{ secrets.DOCKER_USERNAME }}\retirementcalc:latest && docker run -d --name retirementcalc -p 8080:80 ${{ secrets.DOCKER_USERNAME }}\retirementcalc:latest
+          ssh -i ~/.ssh/github_actions -p 45853 brandon@brandonrichardson.dev docker pull ${{ secrets.DOCKER_USERNAME }}\retirementcalc:latest && docker run -d --name retirementcalc -p 8080:80 ${{ secrets.DOCKER_USERNAME }}\retirementcalc:latest
