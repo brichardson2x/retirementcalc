@@ -38,3 +38,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.getElementById('retire_form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const jsondata = Object.fromEntries(formData.entries());
+
+    const jsonstring = JSON.stringify(jsondata);
+
+    console.log(jsonstring);
+
+    fetch('http://127.0.0.1:8080/calculator', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: jsonstring,
+    })
+
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+    })
+    .then(result => {
+        console.log('Success:', result);
+    })
+    .then(error => {
+        console.error('Error:', error);
+    });
+
+})
+
+
+/*
+
+
+
+*/

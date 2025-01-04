@@ -9,33 +9,21 @@
 <body class="body">
     <h1>Retirement Nest Egg Calculator</h1>
     <div class="container">
-        <form class="form" id="retirement">
+        <form class="form" id="retire_form">
             <div class="form">
                 <h2>Basic Assumptions</h2>
-                <input type="number" name="current_age" placeholder="Current Age" required>
-                <input type="number" name="retirement_age" placeholder="Retirement Age" required>
-                <input type="text" name="years_til_death" placeholder="Years in Retirement" required>
+                <input type="number" name="current_age" placeholder="Current Age" value=35 required>
+                <input type="number" name="retirement_age" placeholder="Retirement Age" value=67 required>
+                <input type="text" name="years_til_death" placeholder="Years in Retirement" value=20 required>
                 <input type="text" name="average_annual_return" placeholder="Average Annual Return" value="8" required>
                 <input type="text" name="average_inflation_rate" placeholder="Average Inflation Rate" value="2.5" required>
-                <div class="volatility">
-                    <label>Volatility Level</label>
-                    <div class="volatility">
-                            <input type="radio" name="volatility" value=".05" id="volatility-low">
-                            <label for="volatility-low">Low</label>
-                            <input type="radio" name="volatility" value=".15" id="volatility-medium" checked>
-                            <label for="volatility-medium">Medium</label>
-                            <input type="radio" name="volatility" value=".3" id="volatility-high">
-                            <label for="volatility-high">High</label>
-                            <input type="radio" name="volatility" value=".5" id="volatility-extremely-high">
-                            <label for="volatility-high">Extremely High</label>
-                    </div>
-                </div>
+                <input type="text" name="spend_rate" placeholder="Spend Rate" value=4 required>
                 <br>
                 <h2>401k</h2>
-                <input type="text" name="401k_balance" placeholder="401k Balance">
-                <input type="text" name="monthly_contribution" placeholder="Monthly Contribution">
-                <input type="text" name="company_match_percentage" placeholder="Company Match Percentage" value="0">
-                <input type="text" name="max_contribution_match" placeholder="Maximum Contribution Match" value="0">
+                <input type="text" name="four01k_balance" placeholder="401k Balance">
+                <input type="text" name="four01k_monthly_contribution" placeholder="Monthly Contribution">
+                <input type="text" name="company_match_rate" placeholder="Company Match Percentage" value="0">
+                <input type="text" name="max_contribution_match_rate" placeholder="Maximum Contribution Match" value="0">
                 <br>
                 <h2>HSA</h2>
                 <input type="text" name="hsa_balance" placeholder="HSA Balance">
@@ -45,13 +33,20 @@
                 <h2>IRA</h2>
                 <input type="text" name="ira_balance" placeholder="IRA Balance">
                 <input type="text" name="monthly_contribution_ira" placeholder="Monthly Contribution">
+                <br>
+                <h2>Dividends</h2>
+                <input type="text" name="dividend_balance" placeholder="Dividend Balance">
+                <input type="text" name="dividend_contribution" placeholder="Monthly Contribution">
+                <input type="text" name="dividend_yield_rate" placeholder="Dividend Yield">
             </div>
             <div>
                 <button type="submit" class="button">Calculate</button>
             </div>
         </form>
+        <div class="results">
+            <h1>Insert Results Here</h1>
+        </div>
     </div>
     <script src="../static/home.js"></script>
 </body>
 </html>
-
