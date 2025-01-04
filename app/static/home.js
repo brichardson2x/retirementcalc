@@ -50,7 +50,7 @@ document.getElementById('retire_form').addEventListener('submit', function(event
 
     console.log(jsonstring);
 
-    fetch('http://localhost:8080/calculator', {
+    fetch('/calculator', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
