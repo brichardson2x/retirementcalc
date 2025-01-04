@@ -5,10 +5,10 @@ from flask import render_template, request, jsonify
 def home():
     return render_template('home.html')
 
-@app.route('/calculator') # add methods=['POST']
+@app.route('/calculator', methods=['POST']) # add methods=['POST']
 def calculator():
 
-    return render_template('test.html')
+    return 200
 
     data = request.get_json()
 
