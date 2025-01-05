@@ -51,4 +51,4 @@ jobs:
 
       - name: Deploy to Server
         run: |
-          ssh -i ~/.ssh/github_actions -p 45853 brandon@brandonrichardson.dev "docker stop retirementcalc || true && docker rm retirementcalc || true && docker pull ${{ secrets.DOCKER_USERNAME }}/retirementcalc:latest && docker run -d --name retirementcalc -p 80:8080 ${{ secrets.DOCKER_USERNAME }}/retirementcalc:latest"
+          ssh -i ~/.ssh/github_actions -p 45853 brandon@brandonrichardson.dev "docker stop retirementcalc || true && docker rm retirementcalc || true && docker pull ${{ secrets.DOCKER_USERNAME }}/retirementcalc:latest && docker run -d --name retirementcalc -p 8080:8080 ${{ secrets.DOCKER_USERNAME }}/retirementcalc:latest"
