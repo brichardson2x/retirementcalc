@@ -9,4 +9,4 @@ def home():
 def calculator():
 
     data = request.get_json()
-    return jsonify({"error": "No data received"}), 400
+    return jsonify({"message": "No data received"}), 200
