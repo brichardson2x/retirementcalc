@@ -8,7 +8,7 @@ def home():
 @app.route('/calculator', methods=['POST']) # add methods=['POST']
 def calculator():
     try:
-        data = request.get_json
+        data = request.json
         print(data)
         print(request.headers)
         if not data:
