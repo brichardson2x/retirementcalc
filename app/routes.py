@@ -11,7 +11,7 @@ def calculator():
         data = request.json
 
         if not data:
-            return jsonify({"message": "No data received"}), 400
+            return jsonify({"message": "No data received"}), 437
     
         begin = data['current_age']
         retire = data['retirement_age']
