@@ -15,6 +15,7 @@ def calculator():
             return jsonify({"message": "No data received"}), 400
         return jsonify({"message": "Data received", "data": data}), 200
     except Exception as e:
+        print(request.headers)
         print(f"Error while decoding JSON: {e}")  # Logs the error to the console
         return jsonify({"error": f"Failed to decode JSON object: {str(e)}"}), 400
 
