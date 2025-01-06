@@ -9,6 +9,7 @@ def home():
 def calculator():
     try:
         data = request.get_json
+        print(request.headers)
         if not data:
             return jsonify({"message": "No data received"}), 400
         return jsonify({"message": "Data received", "data": data}), 200
